@@ -1,0 +1,54 @@
+magic
+tech sky130A
+timestamp 1695673048
+<< nwell >>
+rect 580 465 625 775
+rect 990 465 1040 775
+rect 1395 465 1450 775
+rect 175 290 195 465
+<< metal1 >>
+rect 580 465 625 775
+rect 990 465 1040 775
+rect 1395 465 1450 775
+rect 590 300 625 400
+rect 1000 300 1025 400
+rect 1385 300 1450 400
+rect 585 170 620 270
+rect 1000 170 1025 270
+rect 1385 170 1450 270
+rect 0 15 25 115
+rect 575 -280 630 115
+rect 990 -280 1030 115
+rect 1400 -280 1440 115
+rect 0 -350 195 -310
+rect 580 -350 615 -310
+rect 995 -350 1030 -310
+rect 1405 -350 1445 -310
+use csrl_flipflop  csrl_flipflop_0
+timestamp 1695672883
+transform 1 0 320 0 1 -120
+box -145 -230 280 895
+use csrl_flipflop  csrl_flipflop_1
+timestamp 1695672883
+transform 1 0 730 0 1 -120
+box -145 -230 280 895
+use csrl_flipflop  csrl_flipflop_2
+timestamp 1695672883
+transform 1 0 1140 0 1 -120
+box -145 -230 280 895
+use csrl_flipflop  csrl_flipflop_3
+timestamp 1695672883
+transform 1 0 1550 0 1 -120
+box -145 -230 280 895
+use inverter  inverter_0
+timestamp 1695671593
+transform 1 0 120 0 1 15
+box -120 -15 85 550
+<< labels >>
+rlabel metal1 0 -330 0 -330 7 CLK
+rlabel metal1 0 65 0 65 7 VN
+rlabel space 0 350 0 350 7 D
+rlabel space 0 515 0 515 7 VP
+rlabel space 1830 350 1830 350 3 Q
+rlabel space 1830 220 1830 220 3 Qn
+<< end >>

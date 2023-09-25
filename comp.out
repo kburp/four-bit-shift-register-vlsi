@@ -1,0 +1,81 @@
+
+Circuit 1 cell sky130_fd_pr__nfet_01v8 and Circuit 2 cell sky130_fd_pr__nfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__nfet_01v8 and sky130_fd_pr__nfet_01v8 are equivalent.
+
+Circuit 1 cell sky130_fd_pr__pfet_01v8 and Circuit 2 cell sky130_fd_pr__pfet_01v8 are black boxes.
+Equate elements:  no current cell.
+Device classes sky130_fd_pr__pfet_01v8 and sky130_fd_pr__pfet_01v8 are equivalent.
+
+Subcircuit summary:
+Circuit 1: inverter                        |Circuit 2: inverter                        
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (1)                |sky130_fd_pr__nfet_01v8 (1)                
+sky130_fd_pr__pfet_01v8 (1)                |sky130_fd_pr__pfet_01v8 (1)                
+Number of devices: 2                       |Number of devices: 2                       
+Number of nets: 6 **Mismatch**             |Number of nets: 4 **Mismatch**             
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: inverter                        |Circuit 2: inverter                        
+
+---------------------------------------------------------------------------------------
+Net: VP                                    |Net: VP                                    
+  sky130_fd_pr__pfet_01v8/(1|3) = 1        |  sky130_fd_pr__pfet_01v8/(1|3) = 1        
+                                           |  sky130_fd_pr__pfet_01v8/4 = 1            
+                                           |                                           
+Net: VN                                    |Net: VN                                    
+  sky130_fd_pr__nfet_01v8/(1|3) = 1        |  sky130_fd_pr__nfet_01v8/(1|3) = 1        
+                                           |  sky130_fd_pr__nfet_01v8/4 = 1            
+                                           |                                           
+Net: GND                                   |(no matching net)                          
+  sky130_fd_pr__nfet_01v8/4 = 1            |                                           
+                                           |                                           
+Net: VDD                                   |(no matching net)                          
+  sky130_fd_pr__pfet_01v8/4 = 1            |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+  Flattening non-matched subcircuits inverter inverter
+
+Subcircuit summary:
+Circuit 1: csrl_flipflop                   |Circuit 2: csrl_flipflop                   
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (7)                |sky130_fd_pr__nfet_01v8 (7)                
+sky130_fd_pr__pfet_01v8 (8)                |sky130_fd_pr__pfet_01v8 (8)                
+Number of devices: 15                      |Number of devices: 15                      
+Number of nets: 14 **Mismatch**            |Number of nets: 12 **Mismatch**            
+---------------------------------------------------------------------------------------
+NET mismatches: Class fragments follow (with fanout counts):
+Circuit 1: csrl_flipflop                   |Circuit 2: csrl_flipflop                   
+
+---------------------------------------------------------------------------------------
+Net: VN                                    |Net: VN                                    
+  sky130_fd_pr__nfet_01v8/(1|3) = 3        |  sky130_fd_pr__nfet_01v8/(1|3) = 3        
+                                           |  sky130_fd_pr__nfet_01v8/4 = 7            
+                                           |                                           
+Net: VP                                    |Net: VP                                    
+  sky130_fd_pr__pfet_01v8/(1|3) = 4        |  sky130_fd_pr__pfet_01v8/(1|3) = 4        
+                                           |  sky130_fd_pr__pfet_01v8/4 = 8            
+                                           |                                           
+Net: VDD                                   |(no matching net)                          
+  sky130_fd_pr__pfet_01v8/4 = 8            |                                           
+                                           |                                           
+Net: GND                                   |(no matching net)                          
+  sky130_fd_pr__nfet_01v8/4 = 7            |                                           
+---------------------------------------------------------------------------------------
+Netlists do not match.
+  Flattening non-matched subcircuits csrl_flipflop csrl_flipflop
+
+Subcircuit summary:
+Circuit 1: four_bit_shift_register_xschem. |Circuit 2: four_bit_shift_register.spice   
+-------------------------------------------|-------------------------------------------
+sky130_fd_pr__nfet_01v8 (29)               |sky130_fd_pr__nfet_01v8 (29)               
+sky130_fd_pr__pfet_01v8 (33)               |sky130_fd_pr__pfet_01v8 (33)               
+Number of devices: 62                      |Number of devices: 62                      
+Number of nets: 33                         |Number of nets: 33                         
+---------------------------------------------------------------------------------------
+Netlists match uniquely.
+Cells have no pins;  pin matching not needed.
+Device classes four_bit_shift_register_xschem.spice and four_bit_shift_register.spice are equivalent.
+
+Final result: Circuits match uniquely.
+.

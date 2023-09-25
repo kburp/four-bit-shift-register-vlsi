@@ -1,0 +1,39 @@
+* NGSPICE file created from four_bit_shift_register.ext - technology: sky130A
+
+.subckt inverter VN VP A Y
+X0 Y A VP VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X1 Y A VN VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+.ends
+
+.subckt csrl_flipflop CLK VN Dn D VP Q Qn
+X0 Qn CLK a_n150_1500# VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X1 a_n150_1500# CLK Dn VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X2 Q Qn a_330_1550# VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.125 ps=1.25 w=1 l=0.15
+X3 Q CLK a_n120_1550# VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X4 Qn Q a_330_1210# VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.125 ps=1.25 w=1 l=0.15
+X5 a_n120_1550# CLK D VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X6 Qn Q VN VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X7 a_n120_1550# a_n150_1500# VP VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X8 a_n120_1550# a_n150_1500# a_n80_n330# VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.4 ps=2.96 w=1 l=0.15
+X9 a_330_1550# CLK VP VP sky130_fd_pr__pfet_01v8 ad=0.125 pd=1.25 as=0.5 ps=3 w=1 l=0.15
+X10 a_n80_n330# CLK VN VN sky130_fd_pr__nfet_01v8 ad=0.4 pd=2.96 as=2 ps=9 w=4 l=0.15
+X11 a_330_1210# CLK VP VP sky130_fd_pr__pfet_01v8 ad=0.125 pd=1.25 as=0.5 ps=3 w=1 l=0.15
+X12 a_n150_1500# a_n120_1550# VP VP sky130_fd_pr__pfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X13 Q Qn VN VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.5 ps=3 w=1 l=0.15
+X14 a_n150_1500# a_n120_1550# a_n80_n330# VN sky130_fd_pr__nfet_01v8 ad=0.5 pd=3 as=0.4 ps=2.96 w=1 l=0.15
+.ends
+
+
+* Top level circuit four_bit_shift_register
+
+Xinverter_0 VN inverter_0/VP inverter_0/A inverter_0/Y inverter
+Xcsrl_flipflop_0 CLK VN inverter_0/Y inverter_0/A inverter_0/VP csrl_flipflop_1/D
++ csrl_flipflop_1/Dn csrl_flipflop
+Xcsrl_flipflop_1 CLK VN csrl_flipflop_1/Dn csrl_flipflop_1/D inverter_0/VP csrl_flipflop_2/D
++ csrl_flipflop_2/Dn csrl_flipflop
+Xcsrl_flipflop_2 CLK VN csrl_flipflop_2/Dn csrl_flipflop_2/D inverter_0/VP csrl_flipflop_3/D
++ csrl_flipflop_3/Dn csrl_flipflop
+Xcsrl_flipflop_3 CLK VN csrl_flipflop_3/Dn csrl_flipflop_3/D inverter_0/VP csrl_flipflop_3/Q
++ csrl_flipflop_3/Qn csrl_flipflop
+.end
+
